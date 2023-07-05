@@ -5,5 +5,5 @@ var ACCESS_TOKEN = '';//自分のアクセストークンに修正
 
 //通常変数
 
-var lightId= getLightId();//取得されるエアコンのIDを格納する変数、エアコンを制御するために必要です。
+var lightId= getLightId();//取得されるIDを格納する変数、照明を制御するために必要です。
 var TIME_ZONE = 'Asia/Tokyo';//デフォルトでは、Asia/Tokyo（日本標準時）が使用されています。

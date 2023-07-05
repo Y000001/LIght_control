@@ -15,23 +15,28 @@ function getLightId() {
   return lightId;
 }
 
-function setLight(cmd) {
+function light_on(){
+  const headers = {'Authorization': 'Bearer ' + ACCESS_TOKEN,}; 
   
-var url = 'https://api.nature.global/1/appliances/' + lightId + '/light';
+  const url = 'https://api.nature.global/1/appliances/' + lightId + '/light';
 
-const payload = {"button" : cmd,};
-const headers = {'Authorization': 'Bearer ' + ACCESS_TOKEN,}; 
+  var options = {
+      "method" : "post",
+      "headers" : headers,
+      "payload" : {"button": "on"}
+    };
+var reply = UrlFetchApp.fetch(url, options);
+}
 
-const options = {
-"method" : "post",
-"headers" : headers,
-"payload" : payload
-};
-
-Logger.log("Sending this request: " + url);
- 
-var response = UrlFetchApp.fetch(url, options);
+function light_off(){
+  const headers = {'Authorization': 'Bearer ' + ACCESS_TOKEN,}; 
   
-Logger.log("Received this response: " + response.getContentText());
-  
+  const url = 'https://api.nature.global/1/appliances/' + lightId + '/light';
+
+  var options = {
+      "method" : "post",
+      "headers" : headers,
+      "payload" : {"button": "off"}
+    };
+var reply = UrlFetchApp.fetch(url, options);
 }

@@ -14,11 +14,11 @@ var currentTime = currentHour + currentMinute;
 
 // 開始時間に達したかをチェックする
 if (currentTime === startTime) {
-setLight(cmd = "on")
+light_on();
 }
 
 // 終了時間に達したかをチェックする
 if (currentTime === endTime) {
-setLight(cmd = "off")
+light_off();
 }
 }
